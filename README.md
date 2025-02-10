@@ -110,6 +110,5 @@ This dataset contains information about users' app usage, demographics, preferen
 - **Categorical Data Standardization**  
    - Strings had inconsistent **capitalization and spacing**, which needed standardization (`lowercasing` and trimming spaces).  
 
-- **Ensuring No Duplicates**  
-   - Checking for duplicate records was crucial to prevent **overrepresentation of certain user behaviors** in the analysis.
+
  
