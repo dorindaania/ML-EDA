@@ -84,5 +84,32 @@ This dataset contains information about users' app usage, demographics, preferen
 
 ---
 
-This analysis provides valuable insights into dating app usage among GenZ users, aiding app developers in optimizing their platforms. 🚀
+## Task 8 Answers
+1. **Insights for Expanding into Rural India**  
+- **App Usage Patterns** – Understanding how frequently users engage with dating apps and their daily screen time can help determine if rural users would be willing to adopt similar behaviors.
+- **Primary & Secondary App Preferences** – If the dataset contains insights on why users choose certain apps, it can help shape an app that aligns with rural preferences.  
+- **Challenges Faced by Users** – If challenges like **privacy concerns**, **network issues**, or **social stigma** appear in urban areas, they could be more pronounced in rural areas. Addressing these proactively would be crucial.  
+- **Demographics & Satisfaction Levels** – Understanding age groups, gender distribution, and **what makes users satisfied or dissatisfied** will help in tailoring the app’s features.  
+- **Geographical Insights** – If certain locations show more engagement, the same strategy can be adapted to rural settings with cultural modifications.
 
+2. **Two Features for a New Dating App Based on This Data**  
+- **AI-Based Matchmaking with Local Cultural Filters**  
+   - A feature that **matches users based on cultural preferences, traditions, and local languages**. The dataset likely shows how preferences vary by location, so a **region-based matching algorithm** could enhance engagement.  
+
+- **Offline Mode & Low-Bandwidth Compatibility**  
+   - Rural areas often struggle with **internet connectivity**. Implementing an **offline mode** that allows users to browse profiles and send messages when they regain internet access (similar to WhatsApp's offline messaging) would improve accessibility.
+ 
+
+3.  **Biggest Data Cleaning Challenges**  
+- **Handling Missing Values**  
+   - Many key columns (`Primary_App`, `Secondary_Apps`, `Challenges`) had missing values that required careful **backfill, forward fill, and mode-based imputation** to ensure data integrity.  
+
+- **Inconsistent Data Formats**  
+   - `Daily_Usage_Time` was stored in a **non-standard format** ("2 hours 30 minutes"), requiring conversion into total minutes for proper analysis.  
+
+- **Categorical Data Standardization**  
+   - Strings had inconsistent **capitalization and spacing**, which needed standardization (`lowercasing` and trimming spaces).  
+
+- **Ensuring No Duplicates**  
+   - Checking for duplicate records was crucial to prevent **overrepresentation of certain user behaviors** in the analysis.
+ 
