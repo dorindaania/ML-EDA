@@ -1,4 +1,9 @@
-# Dataset Overview
+# GenZ Dating App Data Analysis
+
+## Overview
+This project analyzes the **GenZ Dating App** dataset to explore user demographics, app preferences, and usage patterns. The analysis involves data preprocessing, feature engineering, and visualization to gain insights into user behavior on dating apps.
+
+## Dataset Overview
 This dataset contains information about users' app usage, demographics, preferences, and challenges in using dating applications. It includes details on primary and secondary app choices, usage frequency, satisfaction levels, and desired features.
 
 | Column Name                   | Data Type | Description |
@@ -21,12 +26,63 @@ This dataset contains information about users' app usage, demographics, preferen
 | Partner_Priorities             | category   | The order of priority for selecting a partner (e.g., values > personality > appearance) |
 | Daily_Usage_Time_in_Minutes    | int      | Numeric representation of daily usage time in minutes |
 
-# Data Cleaning Steps
 
-1. **Standardized Time Format:** Converted `Daily_Usage_Time` into numerical minutes and stored in `Daily_Usage_Time_in_Minutes`.
-2. **Checked for Missing Values:** Missing values in `Primary_App`, `Secondary_App` and `Challenges` were found in the dataset and filled them using backfill and forward fill because the value counts of the entries in each column didn't have any significant difference so I didn't think it'll be good to fill  it with the mode.
-3. **Data Type Consistency:** Ensured that object columns were converted to category data types and `Satisfaction` was also converted to category data type.
-4. **Removed Duplicates:** Checked for duplicates but there were none available.
-5. **Ensured Gender Categorization:** Standardized categorical labels to avoid inconsistencies.
+## Data Preprocessing
+### Handling Missing Values
+- Used **backfill** and **forward fill** methods to handle missing values in categorical columns like `Primary_App`, `Secondary_Apps`, and `Challenges`.
+- Replaced remaining missing values in `Primary_App` with the **mode** of the column.
+- Verified that no missing values remained after processing.
 
+### Data Cleaning
+- Converted all categorical string values to **lowercase** for consistency.
+- Converted categorical variables to the **category** data type to optimize memory usage.
+- Ensured `Satisfaction` was properly categorized.
+- Converted `Daily_Usage_Time` into numerical minutes and stored in `Daily_Usage_Time_in_Minutes`.
+- Missing values in `Primary_App`, `Secondary_App` and `Challenges` were found in the dataset and filled them using backfill and forward fill because the value counts of the entries in each column didn't have any significant difference so I didn't think it'll be good to fill  it with the mode.
+- Ensured that object columns were converted to category data types and `Satisfaction` was also converted to category data type.
+- Checked for duplicates but there were none available.
+- Standardized categorical labels to avoid inconsistencies.
+
+### Data Type Transformation
+- Converted `Daily_Usage_Time` from a text format (e.g., "2 hours 30 minutes") into an integer representing **total minutes**.
+- Changed `Daily_Usage_Time_in_Minutes` to an integer data type.
+
+## Exploratory Data Analysis (EDA)
+### Summary Statistics & Data Integrity
+- Verified there were **no duplicate rows** in the dataset.
+- Generated summary statistics using `df.info()` and `df.describe()`.
+
+### Correlation Analysis
+- Computed and visualized a **correlation matrix** using a heatmap to identify relationships between numerical variables.
+
+### Aggregation & Grouping
+- Analyzed **satisfaction levels** and average usage time based on `Gender`, `Age`, `Location`, and `Primary_App`.
+- Created **pivot tables** to compare app usage statistics.
+
+### Visualizations
+1. **User Demographics**
+   - Distribution of `Age`, `Gender`, and `Location` using bar charts and count plots.
+   - Verified that no demographic group was overrepresented.
+2. **Usage Patterns**
+   - **Boxplots** to analyze `Age` and `Daily_Usage_Time_in_Minutes`.
+   - **Histograms & KDE plots** to visualize usage time distributions.
+3. **App Preferences**
+   - **Stacked bar charts** to analyze `Primary_App` preferences across genders.
+   - **Line plots** to track app preferences across different age groups.
+4. **Geographical Analysis**
+   - Mapped city-wise app usage using **Plotly scatter geo-plots**.
+
+## Feature Engineering
+- Created a new feature, **`Active_App_Count`**, representing the total number of dating apps used per user.
+- One-Hot Encoded categorical variables for machine learning compatibility.
+- Applied **MinMax Scaling** to normalize `Age` and `Daily_Usage_Time_in_Minutes`.
+
+## Final Processed Dataset
+- Exported the cleaned dataset as `version_1.csv` for further modeling.
+
+
+
+---
+
+This analysis provides valuable insights into dating app usage among GenZ users, aiding app developers in optimizing their platforms. 🚀
 
