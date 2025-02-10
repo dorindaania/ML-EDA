@@ -27,6 +27,6 @@ This dataset contains information about users' app usage, demographics, preferen
 2. **Checked for Missing Values:** Missing values in `Primary_App`, `Secondary_App` and `Challenges` were found in the dataset and filled them using backfill and forward fill because the value counts of the entries in each column didn't have any significant difference so I didn't think it'll be good to fill  it with the mode.
 3. **Data Type Consistency:** Ensured that object columns were converted to category data types and `Satisfaction` was also converted to category data type.
 4. **Removed Duplicates:** Checked for duplicates but there were none available.
-5. **Ensured Gender Categorization:** Standardized gender labels to avoid inconsistencies.
+5. **Ensured Gender Categorization:** Standardized categorical labels to avoid inconsistencies.
 
 
